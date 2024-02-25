@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./image/favicon.ico" sizes="any" />
+    <link rel="icon" href="./svg/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./images/mobile-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./fonts/font.css" />
+    <link rel="stylesheet" href="./styles/global.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/light.css" />
+    <link rel="stylesheet" href="./styles/dark.css" />
+    <title>Трекер</title>
+  </head>
+  <header class="header"></header>
+  <body class="body">
+    <div class="app">
+      <div class="panel">
+        <img class="logo" src="./image/Group 74.png" alt="logo" />
+        <nav class="menu">
+          <ul class="menu__list"></ul>
+          <button class="menu__add" onclick="togglePopup()">
+            <img src="./svg/Add.svg" alt="Добавление" />
+          </button>
+        </nav>
+      </div>
+      <div class="content">
+        <header class="header">
+          <h1 class="header__title">-</h1>
+          <div class="progress">
+            <div class="progress__text">
+              <h2 class="progress__name">Прогресс</h2>
+              <span class="progress__procent">%</span>
+            </div>
+            <div class="progress__bar">
+              <div class="progress__cover-bar"></div>
+            </div>
+          </div>
+        </header>
+        <main class="main">
+          <div id="days"></div>
+          <div class="habbits">
+            <div class="habbit__day">День 2</div>
+            <form class="habbit__form" onsubmit="addDays(event)">
+              <input
+                name="comment"
+                class="input input_icon"
+                type="text"
+                placeholder="Комментарий"
+              />
+              <img
+                class="input__icon"
+                src="./svg/comment.svg"
+                alt="Комментарий"
+              />
+              <button class="ready" type="submit">Готово</button>
+            </form>
+          </div>
+        </main>
+      </div>
+      <div class="cover cover__hidden" id="add-habbit_popup">
+        <div class="popup">
+            <h2 class="popup__title">
+                Новая привычка
+            </h2>
+            <div class="icon-label">
+                Иконка
+            </div>
+            <div class="icon-select">
+                <button class="icon icon-active" onclick="setIcon(this, 'sport')">
+                    <img src="./svg/sport.svg" alt="">
+                </button>
+                
+                <button class="icon " onclick="setIcon(this,'Water')">
+                    <img src="./svg/Water.svg" alt="">
+                </button>
+                
+                <button class="icon " onclick="setIcon(this,'food')">
+                    <img src="./svg/food.svg" alt="">
+                </button>
+                
+            </div>
+            <form class="popup__form" action="" onsubmit="addHabbit(event)">
+                <input class="input input_icon" type="text" name="name" placeholder="Название">
+                <input class="input input_icon" type="icon"  hidden name="icon" placeholder="Название" value="sport">
+                <input class="input input_icon" type="number" name="target" placeholder="Цель">
+                <button class="ready" type="submit">Добавть</button>
+            </form>
+            <button class="popup-close" onclick="togglePopup()">
+                <img src="./svg/shape.svg" alt="">
+            </button>
+        </div>
+      </div>
+    </div>
+    <script src="./scripts/index.js"></script>
+  </body>
+</html>
